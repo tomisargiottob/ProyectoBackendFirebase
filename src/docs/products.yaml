@@ -1,0 +1,164 @@
+collection:
+  get:
+    summary: Get all products
+    operationId: getProducts
+    responses:
+      '200':
+        description: Found
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Product'
+      '401':
+        $ref: './errors.yaml#/401'
+      '500':
+        $ref: './errors.yaml#/500'
+  post:
+    summary: Add a new product
+    operationId: createProduct
+    requestBody:
+      description: Product to add to the store
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - name
+            properties:
+              name:
+                type: string
+              description:
+                type: string
+              code:
+                type: string
+              thumbnail:
+                type: string
+              price:
+                type: number
+              stock:
+                type: number
+    responses:
+      '200':
+        description: Created
+        content:
+          application/json:
+            schema:
+              type: object
+              $ref: '#/components/schemas/Product'
+      '401':
+        $ref: './errors.yaml#/401'
+      '500':
+        $ref: './errors.yaml#/500'
+
+instance:
+  get:
+    summary: Get one product
+    operationId: getProduct
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+    responses:
+      '200':
+        description: Found
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      '401':
+        $ref: './errors.yaml#/401'
+      '404':
+        $ref: './errors.yaml#/404'
+      '500':
+        $ref: './errors.yaml#/500'
+  put:
+    summary: Modify one product
+    operationId: updateProduct
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+    requestBody:
+      description: Product to add to the store
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - name
+            properties:
+              name:
+                type: string
+              description:
+                type: string
+              code:
+                type: string
+              thumbnail:
+                type: string
+              price:
+                type: number
+              stock:
+                type: number
+    responses:
+      '200':
+        description: Updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      '401':
+        $ref: './errors.yaml#/401'
+      '404':
+        $ref: './errors.yaml#/404'
+      '500':
+        $ref: './errors.yaml#/500'
+  delete:
+    summary: Delete one product
+    operationId: deleteProduct
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+    responses:
+      '200':
+        description: Deleted
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      '401':
+        $ref: './errors.yaml#/401'
+      '404':
+        $ref: './errors.yaml#/404'
+      '500':
+        $ref: './errors.yaml#/500'
+
+components:
+  schemas: 
+    Product: 
+      type: object
+      properties: 
+        id: 
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        code:
+          type: string
+        thumbnail:
+          type: string
+        price:
+          type: number
+        stock:
+          type: number

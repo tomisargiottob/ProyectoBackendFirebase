@@ -1,0 +1,27 @@
+openapi: 3.0.0
+info: 
+  title: E-commerce API
+  version: 1.0.0
+  description: An E-commerce store with Express
+paths:
+  /api/products:
+    $ref: products.yaml#/collection
+  /api/products/{id}:
+    $ref: products.yaml#/instance
+  /api/carts:
+    $ref: cart.yaml#/collection
+  /api/carts/{id}:
+    $ref: cart.yaml#/instance
+  /api/carts/{id}/products:
+    $ref: cart.yaml#/cartproducts
+  /api/carts/{id}/products/{idProd}:
+    $ref: cart.yaml#/products    
+
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+
+security:
+  - BasicAuth: []

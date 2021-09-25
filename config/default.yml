@@ -1,0 +1,6 @@
+app:
+  port: 3000
+
+db:
+  uri: 'mongodb://ecommerce:ecommerce@localhost:27017/ecommerce'
+  uriAtlas: 'mongodb+srv://ecommerce:ecommerce@cluster0.nseuo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'

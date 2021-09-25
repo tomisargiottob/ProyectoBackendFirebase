@@ -1,0 +1,40 @@
+{
+  "name": "plantillaexpress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js",
+    "debug": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomisargiottob/plantillaExpress.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^3.3.6",
+    "express": "^4.17.1",
+    "firebase-admin": "^9.11.1",
+    "mongoose": "5.9.29",
+    "multer": "^1.4.3",
+    "simple-node-logger": "^21.8.12",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.1.6",
+    "uuid": "^8.3.2",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "nodemon": "^2.0.12"
+  },
+  "bugs": {
+    "url": "https://github.com/tomisargiottob/plantillaExpress/issues"
+  },
+  "homepage": "https://github.com/tomisargiottob/plantillaExpress#readme"
+}
